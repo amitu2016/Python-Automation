@@ -1,0 +1,34 @@
+Python 3.7.6 (default, Jan  8 2020, 20:23:39) [MSC v.1916 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.12.0 -- An enhanced Interactive Python. Type '?' for help.
+PyDev console: using IPython 7.12.0
+Python 3.7.6 (default, Jan  8 2020, 20:23:39) [MSC v.1916 64 bit (AMD64)] on win32
+import smtplib
+obj = smtplib.SMTP('smtp.gmail.com',587)
+  ...:
+obj = smtplib.SMTP('smtp.gmail.com',587)
+obj
+Out[5]: <smtplib.SMTP at 0x222c3c83588>
+obj.ehlo()
+Out[6]:
+(250,
+ b'smtp.gmail.com at your service, [103.68.17.183]\nSIZE 35882577\n8BITMIME\nSTARTTLS\nENHANCEDSTATUSCODES\nPIPELINING\nCHUNKING\nSMTPUTF8')
+obj.starttls()
+Out[7]: (220, b'2.0.0 Ready to start TLS')
+obj.login("coddetest.amitu@gmail.com","5271146Amit")
+Traceback (most recent call last):
+  File "C:\Users\admin\anaconda3\lib\site-packages\IPython\core\interactiveshell.py", line 3331, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-8-3d801c03d5ba>", line 1, in <module>
+    obj.login("coddetest.amitu@gmail.com","5271146Amit")
+  File "C:\Users\admin\anaconda3\lib\smtplib.py", line 730, in login
+    raise last_exception
+  File "C:\Users\admin\anaconda3\lib\smtplib.py", line 721, in login
+    initial_response_ok=initial_response_ok)
+  File "C:\Users\admin\anaconda3\lib\smtplib.py", line 642, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials r25sm401393pgv.88 - gsmtp')
+obj.login("codetest.amitu@gmail.com","33333333")
+Out[9]: (235, b'2.7.0 Accepted')
+obj.sendmail("codetest.amitu@gmail.com","amitu2016@gmail.com","Hi, I am sent from Python")
+Out[10]: {}
